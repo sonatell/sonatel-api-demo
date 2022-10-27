@@ -1,0 +1,19 @@
+sonatel:
+  base-url: https://api.sandbox.orange-sonatel.com
+  security:
+    client-id: <replace_with_your_client_id>
+    client-secret: <replace_with_your_client_secret>
+  my-numbers:
+    - 771292773
+spring:
+  main.web-application-type: none
+  security.oauth2.client:
+    registration:
+      sonatel:
+        client-id: ${sonatel.security.client-id}
+        client-secret: ${sonatel.security.client-secret}
+        authorization-grant-type: client_credentials
+        scope: email
+    provider:
+      sonatel:
+        token-uri: ${sonatel.base-url}/oauth/v1/token
