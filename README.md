@@ -1,6 +1,6 @@
 # Sonatel APIs demo
 
-### Getting started
+### 🚀 Getting started
 
 1 - Configure my credentials under this config
 
