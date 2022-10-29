@@ -17,12 +17,20 @@ sonatel:
 
 ```
 
-2 - Do my first API Call _(cf. file under resources/tests.http)_
+2 - Run the application
+
+```shell
+    ./mvnw
+```
+
+```
+
+3 - Do my first API Call _(cf. file under resources/tests.http)_
 
 ```shell
     curl http://localhost:8080/api/account/v1/publicKeys
 ```
 
-3 - Required
+### Required
 
 Java 11+
