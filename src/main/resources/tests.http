@@ -1,5 +1,10 @@
 ###
-GET http://localhost:8080/api/account/v1/publicKeys
+GET http://localhost:8080/api/account/v1/cashins
 
 <> 2022-01-31T152202.404.json
 
+###
+POST http://localhost:8080/api/account/v1/encrypt
+Content-Type: application/json
+
+{"pin" : "1234"}

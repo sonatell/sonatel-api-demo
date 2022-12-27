@@ -1,3 +1,11 @@
+<div align="center">
+  <img src="assets/Logo - api.jpg" alt="Sonatel API" width="320">
+  <h1>Welcome to the Sonatel APIs demo repository</h1>
+
+  <h6>Made with ❤️ &nbsp;by developers for developers</h6>
+</div>
+<br>
+
 # Sonatel APIs demo
 
 ### 🚀 Getting started
@@ -30,6 +38,19 @@ sonatel:
 ```shell
     curl http://localhost:8080/api/account/v1/publicKeys
 ```
+
+
+4 - Additional operations
+
+### Encrypt given pin code
+
+```shell
+    curl -X POST --location "http://localhost:8080/api/account/v1/encrypt" \
+        -H "Content-Type: application/json" \
+        -d "{\"pin\" : \"1234\"}"
+```
+
+### Perform Cashin (faire un dépôt sur le compte d'un client)
 
 ### Required
 
