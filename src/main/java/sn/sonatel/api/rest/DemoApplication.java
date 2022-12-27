@@ -29,9 +29,9 @@ public class DemoApplication {
     private final EncryptionService encryptionService;
 
     @GetMapping(value = "/cashins", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<TransactionResponse> cashins() {
-        log.info("IN - Doing cashins");
-        TransactionRequest request = TransactionRequest.forAmountAndCustomer(2f, "786258731");
+    public ResponseEntity<TransactionResponse> cashins(@RequestParam(defaultValue = "786258731") String customerMsisdn) {
+        log.info("doing cashins to {}", customerMsisdn);
+        TransactionRequest request = TransactionRequest.forAmountAndCustomer(2f, customerMsisdn);
         var response = transactionService.cashIn(request);
         return ResponseEntity.ok(response);
     }
