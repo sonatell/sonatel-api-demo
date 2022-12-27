@@ -42,15 +42,20 @@ sonatel:
 
 4 - Additional operations
 
-### Encrypt given pin code
+
 
 ```shell
+    # encrypt given pin code
+
     curl -X POST --location "http://localhost:8080/api/account/v1/encrypt" \
         -H "Content-Type: application/json" \
         -d "{\"pin\" : \"1234\"}"
+
+    # perform Cashin (faire un dépôt sur le compte d'un client)
+
+    curl -X GET --location "http://localhost:8080/api/account/v1/cashins"
 ```
 
-### Perform Cashin (faire un dépôt sur le compte d'un client)
 
 ### Required
 
