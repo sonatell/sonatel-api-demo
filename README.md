@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/Logo - api.jpg" alt="Sonatel API" width="320">
+  <img src="assets/logo-api.png" alt="Sonatel API" width="320">
   <h1>Welcome to the Sonatel APIs demo repository</h1>
 
   <h6>Made with ❤️ &nbsp;by developers for developers</h6>

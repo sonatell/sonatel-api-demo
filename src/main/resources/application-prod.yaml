@@ -1,8 +1,7 @@
 sonatel:
   base-url: https://api.orange-sonatel.com
   security:
-    client-id: a2b89020-b832-42ed-9dff-a36df4194ed7
-    client-secret: 22c4f5d0-aa7b-4d76-aab4-f8188edda220
-  my-numbers:
-    - 771292773
-
+    client-id:
+    client-secret:
+  my-msisdn: 786258730
+  my-pin-code: 2021
