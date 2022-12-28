@@ -42,6 +42,12 @@ public class DemoApplication {
         return ResponseEntity.ok(response);
     }
 
+    @GetMapping(value = "/balances", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Float> getBalance() {
+        var response = transactionService.getBalance();
+        return ResponseEntity.ok(response);
+    }
+
     @PostMapping(value = "/encrypt", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> encrypt(@RequestBody String pin) {
         var response = encryptionService.encrypt(pin);
