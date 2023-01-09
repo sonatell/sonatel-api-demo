@@ -31,9 +31,7 @@ sonatel:
     ./mvnw
 ```
 
-```
-
-3 - Do my first API Call _(cf. file under resources/tests.http)_
+3 - Do my first API Call (cf. file under resources/tests.http)
 
 ```shell
     curl http://localhost:8080/api/account/v1/publicKeys
@@ -41,7 +39,6 @@ sonatel:
 
 
 4 - Additional operations
-
 
 
 ```shell
