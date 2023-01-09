@@ -50,7 +50,7 @@ sonatel:
 
     # perform Cashin (faire un dépôt sur le compte d'un client)
 
-    curl -X GET --location "http://localhost:8080/api/account/v1/cashins"
+    curl -X GET --location "http://localhost:8080/api/account/v1/cashins?customerMsisdn=77xxxxxxx"
 ```
 
 
