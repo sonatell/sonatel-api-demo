@@ -36,6 +36,14 @@ public class DemoApplication {
         return ResponseEntity.ok(response);
     }
 
+    @GetMapping(value = "/payments", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<TransactionResponse> merchantPaymentInit(@RequestParam(defaultValue = "786258731") String customerMsisdn) {
+        log.info("doing merchant payment init to {}", customerMsisdn);
+        TransactionRequest request = TransactionRequest.forAmountAndCustomer(2f, customerMsisdn).withOtp("1234567");
+        var response = transactionService.webPayment(request);
+        return ResponseEntity.ok(response);
+    }
+
     @GetMapping(value = "/publicKeys", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<PublicKey> getKey() {
         var response = transactionService.getPublicKey();

@@ -2,9 +2,13 @@ sonatel:
   security:
     client-id: a2b89020-b832-42ed-9dff-a36df4194ed7
     client-secret: 22c4f5d0-aa7b-4d76-aab4-f8188edda220
-  my-msisdn: 786258730
-  my-pin-code: 2021
-
+  retailer:
+    msisdn: 786258730
+    pin-code: 2021
+  merchant:
+    msisdn: 786258729
+    merchant-code: 123456
+    pin-code: 2021
 ######################################    ######################################
                  ################ CONFIGURATION PROPERTIES    #############
 ######################################    ######################################

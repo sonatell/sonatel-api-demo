@@ -17,7 +17,7 @@
     <properties>
         <java.version>11</java.version>
         <start-class>sn.sonatel.api.rest.DemoApplication</start-class>
-        <sonatel-api-springboot.version>1.3.0</sonatel-api-springboot.version>
+        <sonatel-api-springboot.version>2.0.0</sonatel-api-springboot.version>
     </properties>
 
     <dependencies>

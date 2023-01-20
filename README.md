@@ -17,11 +17,16 @@
 ```yaml
 
 sonatel:
-    security:
-      client-id: <put_your_client_id>
-      client-secret: <put_your_client_secret>
-    my-numbers:
-      - 77xxxxxxx
+  security:
+    client-id: a2b89020-b832-42ed-9dff-a36df4194ed7
+    client-secret: 22c4f5d0-aa7b-4d76-aab4-f8188edda220
+  retailer:
+    msisdn: 7xxxxxxx
+    pin-code: XXXX
+  merchant:
+    msisdn: 7xxxxxxx
+    merchant-code: XXXXXX
+    pin-code: XXXX
 
 ```
 
@@ -40,7 +45,6 @@ sonatel:
 
 4 - Additional operations
 
-
 ```shell
     # encrypt given pin code
 
@@ -51,8 +55,12 @@ sonatel:
     # perform Cashin (faire un dépôt sur le compte d'un client)
 
     curl -X GET --location "http://localhost:8080/api/account/v1/cashins?customerMsisdn=77xxxxxxx"
-```
 
+    # perform Web Payment (with otp code)
+
+        curl -X GET --location "http://localhost:8080/api/account/v1/payments/onestep?customerMsisdn=77xxxxxxx"
+
+```
 
 ### Required
 
