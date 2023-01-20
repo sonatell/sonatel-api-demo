@@ -7,7 +7,7 @@ sonatel:
     pin-code: 2021
   merchant:
     msisdn: 786258729
-    merchant-code: 123456
+    merchant-code: "12345"
     pin-code: 2021
 ######################################    ######################################
                  ################ CONFIGURATION PROPERTIES    #############

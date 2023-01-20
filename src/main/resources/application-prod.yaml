@@ -3,5 +3,10 @@ sonatel:
   security:
     client-id:
     client-secret:
-  my-msisdn: 786258730
-  my-pin-code: 2021
+  retailer:
+    msisdn: 77XXXXXXX
+    pin-code: XXXX
+  merchant:
+    msisdn: 77XXXXXXX
+    merchant-code: "123456"
+    pin-code: XXXX

@@ -50,9 +50,15 @@ public class DemoApplication {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping(value = "/balances", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Float> getBalance() {
-        var response = transactionService.getBalance();
+    @GetMapping(value = "/retailer/balances", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Float> getRetailerBalance() {
+        var response = transactionService.getRetailerBalance();
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping(value = "/merchant/balances", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Float> getMerchantBalance() {
+        var response = transactionService.getMerchantBalance();
         return ResponseEntity.ok(response);
     }
 
