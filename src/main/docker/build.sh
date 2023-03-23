@@ -2,5 +2,5 @@
 
 registry=registry.tools.orange-sonatel.com/dif/api
 
-docker build -t $registry/sonatel-api-demo:1.0.0 .
-docker push $registry/sonatel-api-demo:1.1.0
+docker build -t $registry/sonatel-api-demo:1.3.0 .
+docker push $registry/sonatel-api-demo:1.3.0

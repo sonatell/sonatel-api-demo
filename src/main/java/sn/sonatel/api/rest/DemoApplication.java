@@ -1,5 +1,6 @@
 package sn.sonatel.api.rest;
 
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import lombok.RequiredArgsConstructor;
@@ -10,6 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import sn.sonatel.api.config.SecurityConfiguration;
+import sn.sonatel.api.model.PinCode;
 import sn.sonatel.api.model.PublicKey;
 import sn.sonatel.api.model.TransactionRequest;
 import sn.sonatel.api.model.TransactionResponse;
@@ -65,9 +67,10 @@ public class DemoApplication {
     }
 
     @PostMapping(value = "/encrypt", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> encrypt(@RequestBody String pin) {
-        if(PinCodeValidator.isValid(pin)) {
-            var response = encryptionService.encrypt(pin);
+    public ResponseEntity<String> encrypt(@RequestBody PinCode pin) {
+        log.info("Receive pin for encryption {}", pin);
+        if(Objects.nonNull(pin) && PinCodeValidator.isValid(pin.getPin())) {
+            var response = encryptionService.encrypt(pin.getPin());
             return ResponseEntity.ok(response);
         } else {
             return ResponseEntity.badRequest().body("Invalid pin code format, it should be 4 digits");
