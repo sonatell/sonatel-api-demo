@@ -1,5 +1,7 @@
 package sn.sonatel.api.rest;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
@@ -64,7 +66,28 @@ public class DemoApplication {
 
     @PostMapping(value = "/encrypt", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> encrypt(@RequestBody String pin) {
-        var response = encryptionService.encrypt(pin);
-        return ResponseEntity.ok(response);
+        if(PinCodeValidator.isValid(pin)) {
+            var response = encryptionService.encrypt(pin);
+            return ResponseEntity.ok(response);
+        } else {
+            return ResponseEntity.badRequest().body("Invalid pin code format, it should be 4 digits");
+        }
+    }
+
+}
+
+class PinCodeValidator {
+    private static final String PIN_CODE_PATTERN = "^\\d{4}$";
+    private static final Pattern pattern = Pattern.compile(PIN_CODE_PATTERN);
+
+    private PinCodeValidator() {
+    }
+
+    static boolean isValid(String pinCode) {
+        if (pinCode == null) {
+        return false;
+        }
+        Matcher matcher = pattern.matcher(pinCode);
+        return matcher.matches();
     }
 }
